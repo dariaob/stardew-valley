@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 const MainContent = () => {
   return(
       <div className='mainContent'>
@@ -12,6 +14,7 @@ const MainContent = () => {
               Клуб, когда-то бывший центром городской активности, пришел в упадок.
               Но долина полна возможностей.
               С большой самоотверженностью вы сможете стать тем, кто приведет долину Стардью к величию!
+              <ul></ul>
           </span>
           <span className='imageContent'>
               <img src={'http://pm1.narvii.com/7250/87a6b9a327346637557d215a213d9fe455d89cfer1-1920-1200v2_uhq.jpg'} alt={"Картинка с фермы"}/>
