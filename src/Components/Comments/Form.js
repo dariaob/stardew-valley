@@ -27,7 +27,7 @@ class Form extends React.Component {
                 type='text'
                 name='name'
                 id='name'
-                placeholder='Введите имя'
+                placeholder='Имя'
                 value={name}
                 onChange={this.handleChange}/>
 
@@ -37,12 +37,12 @@ class Form extends React.Component {
                 type='text'
                 name='comment'
                 id='comment'
-                placeholder='Введите комментарии'
+                placeholder='Комментарий'
                 value={comment}
                 onChange={this.handleChange}
                 />
+                <button type='submit'>Отправить</button>
             </form>
-
         )
     }
 }
