@@ -13,7 +13,7 @@ const systemName = [{name: 'Операционная система'}, {name:'П
 
 
 //принимает объект systemName и выводит заголовки таблицы с системными требованиями
-let Shit = systemName.map((os, i) => {
+let SysName = systemName.map((os, i) => {
         return (
             <th key={i}>
                 <tr>{os.name}</tr>
@@ -46,7 +46,7 @@ const TableB = () => {
 
 
 function TableH() {
-    return <thead>{Shit}</thead>;
+    return <thead>{SysName}</thead>;
 }
 
 //получает данные из TableH и TableB и передает их в таблицу

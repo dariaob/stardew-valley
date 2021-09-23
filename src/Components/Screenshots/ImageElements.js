@@ -36,7 +36,7 @@ const screenshots = [{
 ]
 
 
-function ShowImage() {
+function ShowImage(props) {
     return null;
 }
 

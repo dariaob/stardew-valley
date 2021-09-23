@@ -24,7 +24,8 @@ export class Clock extends React.Component {
 
     //Функция выводит приветствие в зависимости от текущего времени пользователя
     CurrentTimeCounter = () => {
-        let currentTime = parseFloat(this.state.date.toLocaleString())
+        //Получаем текущий час пользователя и преобразовываем в number. 
+        let currentTime = parseFloat(this.state.date.getHours().toLocaleString())
         if (currentTime > 6 && currentTime < 12) {
             return (
                 <div>
