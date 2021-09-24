@@ -8,6 +8,7 @@ class Comments extends React.Component {
 
     handleSubmit = (comment) => {
         this.setState({comments:[...this.state.comments, comment]})
+
     }
 
     render() {
