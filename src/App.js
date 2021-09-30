@@ -1,4 +1,4 @@
-import './App.css';
+import './index.css';
 import React from "react";
 
 import HomePage from "./pages/Home/homePage";

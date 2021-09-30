@@ -1,66 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 
-class Form extends React.Component {
-    //Поля для формы
-    formState = {
-        name:'',
-        comment: ''
-    }
-    state = this.formState;
+const Form = () => {
+  //Состояния, в которых будут храниться имена пользователей и комментарии
+  const [names, setName] = useState([]);
+  const [comments, setComment] = useState([]);
 
+  //рефы, которые хранят данные из форм
+  let useTextRef = React.createRef();
+  let useNameRef = React.createRef();
 
-    //обработчик события
-    handleChange = (event) => {
-        //обозначаем целевой элемент
-        const {name, value} = event.target
+  //сохраняет данные из форм в массив
+  let handleChange = () => {
+    let comment = useTextRef.current.value;
+    let values = [...comments, comment];
+    setComment(values);
 
-        this.setState({
-            [name]: value
-        })
-    }
+    let name = useNameRef.current.value;
+    let namesArray = [...names, name];
+    setName(namesArray);
+  };
 
-    //добавление комментов в formstate
-    onSubmit = (event) => {
-        //чтобы страница не перезагружалась
-        event.preventDefault()
+  //выводит имена из массива
+  let nameField = names.map((item, index) => {
+    return (
+      <div key={index.toString()} className="nameField">
+        {item}
+      </div>
+    );
+  });
 
-        this.props.handleSubmit(this.state)
-        this.setState(this.formState)
-        alert(`Думаешь, что ${this.state.comment}? Хм...`)
+  //выводит комментарии из массива
+  let commentField = comments.map((item, index) => {
+    return (
+      <div key={index.toString()} className="commentField">
+        {item}
+      </div>
+    );
+  });
 
-    }
-    render() {
-        const {name, comment} = this.state
-        return (
-            <form onSubmit={this.onSubmit}>
-                {/*Поле для имени*/}
-                <label htmlFor='name'>Имя</label>
-                <input
-                type='text'
-                name='name'
-                id='name'
-                placeholder='Имя'
-                value={name}
-                onChange={this.handleChange}/>
+  return (
+    <>
+      {/*Поле для имени*/}
+      <label htmlFor="name">Имя</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Имя"
+        ref={useNameRef}
+      />
 
-                {/*поле для комментария*/}
-                <label htmlFor='comment'>Комментарий</label>
-                <input
-                type='text'
-                name='comment'
-                id='comment'
-                placeholder='Комментарий'
-                value={comment}
-                onChange={this.handleChange}
-                />
-                <button type='submit'>Отправить</button>
+      {/*поле для комментария*/}
+      <label htmlFor="comment">Комментарий</label>
+      <textarea
+        name="comment"
+        id="comment"
+        placeholder="Комментарий"
+        ref={useTextRef}
+      />
 
-                <div className='commentField'>{this.formState.comment}</div>
-            </form>
+      {/*//кнопка для сохранения данных в массив*/}
+      <button onClick={handleChange}>Отправить</button>
 
-
-        )
-    }
-}
+      <div className="commentField">
+        {" "}
+        {nameField} {commentField}{" "}
+      </div>
+    </>
+  );
+};
 
 export default Form;
