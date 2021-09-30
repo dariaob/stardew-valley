@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button, Col, FormText } from "react-bootstrap";
 
 const Form = () => {
   //Состояния, в которых будут храниться имена пользователей и комментарии
@@ -40,27 +41,37 @@ const Form = () => {
 
   return (
     <>
-      {/*Поле для имени*/}
-      <label htmlFor="name">Имя</label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Имя"
-        ref={useNameRef}
-      />
+      <div>
+        {/*Поле для имени*/}
+        <label htmlFor="name">Имя</label>
+        <FormText
+          as={"input"}
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Имя"
+          ref={useNameRef}
+          className="form-control"
+        />
+      </div>
 
       {/*поле для комментария*/}
-      <label htmlFor="comment">Комментарий</label>
-      <textarea
-        name="comment"
-        id="comment"
-        placeholder="Комментарий"
-        ref={useTextRef}
-      />
+      <div>
+        <label htmlFor="comment">Комментарий</label>
+        <FormText
+          as={"textarea"}
+          name="comment"
+          id="comment"
+          placeholder="Комментарий"
+          ref={useTextRef}
+          className="form-control"
+        />
+      </div>
 
       {/*//кнопка для сохранения данных в массив*/}
-      <button onClick={handleChange}>Отправить</button>
+      <Button as={Col} variant="success" onClick={handleChange}>
+        Отправить
+      </Button>
 
       <div className="commentField">
         {" "}

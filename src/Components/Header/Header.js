@@ -1,13 +1,21 @@
 import React from "react";
+import {Col, Container, Image} from "react-bootstrap";
 
 //Лого игры
 const Header = () => {
-  return (
-      <header className='header'>
-          <img src={'https://stardewvalleywiki.com/mediawiki/images/6/68/Main_Logo.png'} alt={'постер'}/>
-      </header>
-
-  )
+    return (
+      <Container>
+        <Col>
+          <Image
+            src={
+              "https://stardewvalleywiki.com/mediawiki/images/6/68/Main_Logo.png"
+            }
+            alt={"постер"}
+            fluid
+          />
+        </Col>
+      </Container>
+    );
 }
 
 export default Header;
