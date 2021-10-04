@@ -1,10 +1,9 @@
 import React from "react";
 
-export default class MainContent extends React.Component {
-  render() {
+export const MainContent = () => {
     return (
       <div className="mainContent">
-        <span className="content">
+        <div className="content">
           Stardew Valley — это открытая РПГ о жизни в деревне! Вы унаследовали
           участок вашего дедушки в долине Стардью. Вооружившись старыми
           инструментами и парочкой монет, вы отправитесь туда, чтобы начать
@@ -37,9 +36,7 @@ export default class MainContent extends React.Component {
               звезды.
             </li>
           </ul>
-        </span>
-        <span className="imageContent"></span>
+        </div>
       </div>
     );
-  }
 }

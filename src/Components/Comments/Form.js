@@ -11,7 +11,9 @@ const Form = () => {
   let useNameRef = React.createRef();
 
   //сохраняет данные из форм в массив
-  let handleChange = () => {
+  let handleChange = (event) => {
+    event.preventDefault();
+
     let comment = useTextRef.current.value;
     let values = [...comments, comment];
     setComment(values);
@@ -19,6 +21,9 @@ const Form = () => {
     let name = useNameRef.current.value;
     let namesArray = [...names, name];
     setName(namesArray);
+
+    useNameRef = "";
+    useTextRef = "";
   };
 
   //выводит имена из массива
@@ -49,6 +54,7 @@ const Form = () => {
           type="text"
           name="name"
           id="name"
+          defaultValue="User"
           placeholder="Имя"
           ref={useNameRef}
           className="form-control"
@@ -63,6 +69,7 @@ const Form = () => {
           name="comment"
           id="comment"
           placeholder="Комментарий"
+          defaultValue=""
           ref={useTextRef}
           className="form-control"
         />

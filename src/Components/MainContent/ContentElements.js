@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const systemData = [
   {
     system: [
@@ -68,16 +69,15 @@ function TableH() {
 }
 
 //получает данные из TableH и TableB и передает их в таблицу
-class Requirement extends React.Component {
-  render() {
-    let { bodyData } = this.props;
+export const Requirement = (props) => {
     return (
-      <table>
-        <TableH headData={bodyData} />
-        <TableB bodyData={bodyData} />
-      </table>
+      <>
+        <table>
+          <TableH headData={props.os} />
+          <TableB bodyData={props} />
+        </table>
+      </>
     );
-  }
 }
 
 export default Requirement;

@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import ImageSlider from "./ImageSlider";
 
 //массив с адресами картинок и их описанием
 const images = [
@@ -37,25 +38,22 @@ const images = [
   },
 ];
 
-//выводит картинки на экран
-let ShowImages = () => {
-  let pic = images.map((image, id) => {
-    return (
-      <img src={image.image.toString()} alt={image.label.toString()} key={id} />
-    );
-  });
-  return <div className="pic">{pic}</div>;
-};
+//добавляет картинки в массив state
 
-class Pics extends React.Component {
-  render() {
-    let pics = this.props;
-    return (
-      <div className="screens">
-        <ShowImages pics={pics} />
-      </div>
-    );
-  }
-}
+const Pics = () => {
+  const [image, setImage] = useState([]);
+
+  const ShowImages = () => {
+    setImage(images.map((item) => item.image));
+  };
+
+  useEffect(ShowImages, [])
+
+  return (
+    <>
+      <ImageSlider image={image} />
+    </>
+  );
+};
 
 export default Pics;
