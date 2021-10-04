@@ -4,7 +4,7 @@ import {Col, Container, Image} from "react-bootstrap";
 //Лого игры
 const Header = () => {
     return (
-      <Container pt-3>
+      <Container>
         <Col>
           <Image
             src={

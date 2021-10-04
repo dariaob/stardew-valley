@@ -1,7 +1,7 @@
 import './index.css';
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import HomePage from "./pages/Home/homePage";
+import HomePage from "./pages/Home/HomePage";
 
 function App() {
   return (

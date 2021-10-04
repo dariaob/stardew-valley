@@ -1,12 +1,15 @@
 import React, {useState} from "react";
 
+//принимает пути изображений
 const ImageSlider = ({ image }) => {
     const [index, setIndex] = useState(0)
-
+    //двигает слайды вправо
     const sliderRight = () => {
         setIndex((index + 1) % image.length)
     }
-
+// проверяет, если индекс отрицательный,
+//         то возвращает последний элемент из массива изображений, если нет,
+//         то возвращает текущее
     const slideLeft = () => {
         const nextIndex = index - 1;
 
