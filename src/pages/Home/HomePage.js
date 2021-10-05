@@ -10,7 +10,7 @@ import Navibar from "../../Components/Navbar/Navbar";
 const HomePage = () => {
   return (
     <div className="home-page">
-        <Navibar/>
+      <Navibar />
       <Header />
       <FarmerTime />
       <MainContent />
