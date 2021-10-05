@@ -1,11 +1,14 @@
 import React, { useContext, useState } from "react";
 
-export const AlertContext = React.createContext();
+//Создаем контекст
+const AlertContext = React.createContext();
 
+//передаём его в хук, чтобы не передавать напрямую
 export const useAlert = () => {
     return useContext(AlertContext);
 };
 
+//Контекст провайдер. Создаёт состояние alert, которое отвечает за открытие/скрытие объявления
 const AlertProvider = ({ children }) => {
     const [alert, setAlert] = useState(false);
 

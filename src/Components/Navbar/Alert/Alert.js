@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAlert } from './AlertContext'
 
+//использует кастомный хук чтобы присвоить контекст. Проверяет состояние  чтобы вывести объявление на экран
 const Alert = () => {
     const alert = useAlert()
 
